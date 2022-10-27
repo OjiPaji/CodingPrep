@@ -1,2 +1,2 @@
 # CodingPrep
-Especially for HacktoberFest
+Especially for HacktoberFest 2022
