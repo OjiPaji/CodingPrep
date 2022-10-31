@@ -50,3 +50,32 @@ public:
         return ans;
     }
 };
+/* Python Solution ----- Simple and easy to understand
+class Solution:
+    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
+        m, n, r, c = len(mat), len(mat[0]), 0, 0
+        diag = []
+        
+        def getNext(r, c):
+            # go Northeast
+            if (r+c)%2 == 0 and r > 0 and c < n-1:
+                return r-1, c+1
+            
+            # go East
+            elif ((r+c)%2 == 0 and r == 0 and c < n-1) or ((r+c)%2 == 1 and r == m-1 and c < n-1):
+                return r, c+1
+            
+            # go Southwest
+            elif (r+c)%2 == 1 and r < m-1 and c > 0:
+                return r+1, c-1
+            
+            # go South
+            return r+1, c
+        
+        while True:
+            diag.append(mat[r][c])
+            if (r, c) == (m-1, n-1):
+                break
+            r, c = getNext(r, c)
+        return diag   
+        */
